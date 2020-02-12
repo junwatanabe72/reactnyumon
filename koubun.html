@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <title>React App</title>
+    <!-- <style>
+      #root{
+        cursor: pointer;
+        font-size:20pt;
+        background-color: lightblue;
+        padding:1px 20px;
+      }
+    </style> -->
+
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait</div>
+
+    <script type="text/babel">
+        let dom = document.querySelector('#root');
+
+        let data ={
+          url:'https://google.com',
+          title:'google',
+          caption:'検索サイトです。'
+        };
+
+        let el = (
+        <div>
+          {(()=>
+            <dl>
+              <dt>{data.title}</dt>
+              <dd>{data.caption}</dd>
+              <dd><a href={data.url}>{data.title}に移動。</a></dd>
+            </dl>
+          )()}
+        </div>
+      );
+
+
+        // let data =[
+        //   {name: "taro", mail:"taro@yamada",age:45},
+        //   {name: "hanako", mail:"hanako@flower",age:37},
+        //   {name: "sachiko", mail:"sachiko@happy",age:29}
+        // ];
+        //
+        // let el = (
+        //   <div>
+        //     <table>
+        //       <tr>
+        //         <th>name</th>
+        //         <th>mail</th>
+        //         <th>age</th>
+        //       </tr>
+        //       {data.map((value)=>(
+        //         <tr>
+        //           <th>{value.name}</th>
+        //           <th>{value.mail}</th>
+        //           <th>{value.age}</th>
+        //         </tr>
+        //       ))}
+        //     </table>
+        //   </div>
+        //
+        // );
+        // const list = {
+        //   fontSize:"18pt",
+        //   padding:"5px 50px"
+        // }
+        //
+        // let data = [
+        //   <li>"1"</li>,
+        //   <li>"2"</li>,
+        //   <li>"3"</li>
+        // ];
+        //
+        // let el = (
+        //   <div>
+        //     <ul style={list}>
+        //       {data}
+        //     </ul>
+        //   </div>
+        // );
+
+        // let message_t= "display"
+        // let message_n="hidden"
+
+        // const msg_t ={
+        //   fontSize:"20pt",
+        //   fontWeight:"bold",
+        //   color:"red",
+        //   border:"2px solid green"
+        // }
+        // const msg_f ={
+        //   fontSize:"20pt",
+        //   fontWeight:"bold",
+        //   color:"white",
+        //   border:"2px solid green"
+        // }
+
+
+      //   let flg = false;
+      //
+      //   let el =(
+      //   <div class="">
+      //     {flg ?
+      //       <p style={msg_t}>{message_t}</p>
+      //     :
+      //       <p style={msg_f}>{message_n}</p>
+      //      }
+      //   </div>
+      // );
+
+        // let el = (
+        //   <div>
+        //     <h2>{title}</h2>
+        //     <p><a href={link}>{message}</a></p>
+        //   </div>
+        // );
+
+        ReactDOM.render(el,dom);
+    </script>
+  </body>
+</html>

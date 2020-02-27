@@ -13,7 +13,7 @@ export function memoReducer(state = initData, action){
       return addReduce(state, action);
     case 'DELETE':
       return deleteReduce(state, action);
-      case 'FIND':
+    case 'FIND':
         return findReduce(state, action);
     default:
         return state;
@@ -79,7 +79,7 @@ export function deleteMemo(num){
 export function findMemo(text){
   return {
     type:'FIND',
-    index:text
+    find:text
   }
 }
 

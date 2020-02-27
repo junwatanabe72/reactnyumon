@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <title>React App</title>
+    <style>
+      #root{
+        cursor: pointer;
+        font-size:20pt;
+        background-color: lightblue;
+        padding:1px 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait</div>
+
+    <script type="text/babel">
+        let dom = document.querySelector('#root');
+        let link = "https://google.com";
+        let title = "新タイトル";
+        let message = "google";
+
+        const msg ={
+          fontSize:"20pt",
+          fontWeight:"bold",
+          color:"red",
+          border:"2px solid green"
+        }
+
+        let printMsg = function(msg,size,color){
+          const style = {
+            fontSize:size +"pt",
+            fontWeight:'700',
+            color:color,
+            border:"1px solid " + color
+          };
+          return <p style={style}>{msg}</p>
+        }
+
+        let el =(
+        <div class="">
+          {printMsg('メッセージ1',30,'#ddd')}
+          {printMsg('メッセージ2',20,'#aaa')}
+          {printMsg('メッセージ3',14,'#333')}
+        </div>
+        )
+
+        // let el = (
+        //   <div>
+        //     <h2>{title}</h2>
+        //     <p><a href={link}>{message}</a></p>
+        //   </div>
+        // );
+
+        ReactDOM.render(el,dom);
+    </script>
+  </body>
+</html>
